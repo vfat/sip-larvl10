@@ -14,11 +14,14 @@
                 
                 <div class="card-body bg-grey">
                     <a href="{{route('balita.formtambah')}}" class="btn btn-primary">Tambah</a>
-
+                    
                     <form action="{{ route('balita.import') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                         <input type="file" name="file">
                         <button class="btn btn-accent" type="submit">Import</button>
                     </form>
+
+                    <a href="{{route('balita.export')}}" class="btn btn-neutral">Export</a>
                     
                 </div>
             </div>

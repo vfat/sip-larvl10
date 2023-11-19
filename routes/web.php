@@ -10,6 +10,7 @@ use App\Http\Controllers\Balita\ListBalitaController;
 use App\Http\Controllers\Balita\FormTambahBalitaController;
 use App\Http\Controllers\Balita\TambahBalitaController;
 use App\Http\Controllers\Balita\ImportBalitaController;
+use App\Http\Controllers\Balita\ExportBalitaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/balita/tambah', FormTambahBalitaController::class)->name('balita.formtambah');
     Route::post('/balita/tambah', TambahBalitaController::class)->name('balita.tambah');
     Route::post('/balita/import', ImportBalitaController::class)->name('balita.import');
+    Route::get('/balita/export', ExportBalitaController::class)->name('balita.export');
 });
 
 require __DIR__.'/auth.php';

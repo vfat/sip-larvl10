@@ -10,19 +10,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use App\Imports\BalitaImport;
+use App\Exports\BalitaExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-
-class ImportBalitaController extends Controller
+class ExportBalitaController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request): RedirectResponse
+    public function __invoke(Request $request)
     {
-        Excel::import(new BalitaImport, $request->file('file'));
-
-        return redirect()->back();
+        $tanggal = date('Ymd');
+        return Excel::download(new BalitaExport, 'balita-'.$tanggal.'.xlsx');
     }
 }
