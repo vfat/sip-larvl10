@@ -51,7 +51,7 @@
                                     <td>{{$bayi->kelamin}}</td>
                                     <td>{{$bayi->tanggal_lahir}}</td>
                                     <td>
-                                        <a href="#" class="link link-hover text-green-300">Informasi</a>
+                                        <a href="{{route('balita.detail', $bayi->id)}}" class="link link-hover text-green-300">Informasi</a>
                                         <a href="#" class="link link-hover text-blue-300">Edit</a>
                                         <a href="#" class="link link-hover text-red-300">Delete</a>
                                     </td>
