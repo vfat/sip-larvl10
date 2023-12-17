@@ -33,31 +33,34 @@
                                     <x-input-error :messages="$errors->get('nama')" class="mt-2" />
                                 </div>
 
-                                <!-- jk -->
-                                <div>
-                                    <x-input-label for="jk" :value="__('Jenis Kelamin')" />
-                                    <x-select-input id="jk" class="block mt-1 w-full" name="jk" :options="['L' => 'Laki-laki', 'P' => 'Perempuan', 'U' => 'Tidak Diketahui']" :selected="old('jk')" />
-                                    <x-input-error :messages="$errors->get('jk')" class="mt-2" />
-                                </div>
+                                <!-- kelamin -->
+                                <div class="mt-4">
+                                    <x-input-label for="Kelamin" :value="__('Kelamin')" />
 
+                                    <select class="select select-bordered w-full max-w-xs" name="kelamin" id="kelamin">
+                                        <option value="L">Laki Laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
+                                </div>                                
+                                
                                 <!-- tgl_lahir -->
                                 <div>
                                     <x-input-label for="tgl_lahir" :value="__('Tanggal Lahir')" />
-                                    <x-date-input id="tgl_lahir" class="block mt-1 w-full" name="tgl_lahir" :value="old('tgl_lahir')" required />
+                                    <x-text-input id="tgl_lahir" class="block mt-1 w-full" type="date" name="tanggal_lahir" :value="old('tanggal_lahir')" required autofocus autocomplete="tgl_lahir" />
                                     <x-input-error :messages="$errors->get('tgl_lahir')" class="mt-2" />
-                                </div>
-
+                                </div>  
+                              
                                 <!-- bb_lahir -->
                                 <div>
                                     <x-input-label for="bb_lahir" :value="__('Berat Badan Lahir')" />
-                                    <x-text-input id="bb_lahir" class="block mt-1 w-full" type="text" name="bb_lahir" :value="old('bb_lahir')" />
+                                    <x-text-input id="bb_lahir" class="block mt-1 w-full" name="bb_lahir" :value="old('bb_lahir')"  type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('bb_lahir')" class="mt-2" />
                                 </div>
 
                                 <!-- tb_lahir -->
                                 <div>
                                     <x-input-label for="tb_lahir" :value="__('Tinggi Badan Lahir')" />
-                                    <x-text-input id="tb_lahir" class="block mt-1 w-full" type="text" name="tb_lahir" :value="old('tb_lahir')" />
+                                    <x-text-input id="tb_lahir" class="block mt-1 w-full" name="tb_lahir" :value="old('tb_lahir')" type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('tb_lahir')" class="mt-2" />
                                 </div>
 
@@ -134,35 +137,35 @@
                                 <!-- usia_saat_ukur -->
                                 <div>
                                     <x-input-label for="usia_saat_ukur" :value="__('Usia Saat Ukur')" />
-                                    <x-text-input id="usia_saat_ukur" class="block mt-1 w-full" type="text" name="usia_saat_ukur" :value="old('usia_saat_ukur')" />
+                                    <x-text-input id="usia_saat_ukur" class="block mt-1 w-full" name="usia_saat_ukur" :value="old('usia_saat_ukur')" type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('usia_saat_ukur')" class="mt-2" />
                                 </div>
 
                                 <!-- tanggal_pengukuran -->
                                 <div>
                                     <x-input-label for="tanggal_pengukuran" :value="__('Tanggal Pengukuran')" />
-                                    <x-date-input id="tanggal_pengukuran" class="block mt-1 w-full" name="tanggal_pengukuran" :value="old('tanggal_pengukuran')" required />
+                                    <x-text-input id="tanggal_pengukuran" class="block mt-1 w-full" name="tanggal_pengukuran" type="date" :value="old('tanggal_pengukuran')" required />
                                     <x-input-error :messages="$errors->get('tanggal_pengukuran')" class="mt-2" />
                                 </div>
 
                                 <!-- berat -->
                                 <div>
                                     <x-input-label for="berat" :value="__('Berat')" />
-                                    <x-text-input id="berat" class="block mt-1 w-full" type="text" name="berat" :value="old('berat')" />
+                                    <x-text-input id="berat" class="block mt-1 w-full" name="berat" :value="old('berat')"   type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('berat')" class="mt-2" />
                                 </div>
 
                                 <!-- tinggi -->
                                 <div>
                                     <x-input-label for="tinggi" :value="__('Tinggi')" />
-                                    <x-text-input id="tinggi" class="block mt-1 w-full" type="text" name="tinggi" :value="old('tinggi')" />
+                                    <x-text-input id="tinggi" class="block mt-1 w-full" name="tinggi" :value="old('tinggi')"   type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('tinggi')" class="mt-2" />
                                 </div>
 
                                 <!-- lila -->
                                 <div>
                                     <x-input-label for="lila" :value="__('LILA')" />
-                                    <x-text-input id="lila" class="block mt-1 w-full" type="text" name="lila" :value="old('lila')" />
+                                    <x-text-input id="lila" class="block mt-1 w-full" name="lila" :value="old('lila')" type="number" step="0.01" />
                                     <x-input-error :messages="$errors->get('lila')" class="mt-2" />
                                 </div>
 
