@@ -19,6 +19,13 @@
                            <form method="POST" action="{{ route('balita.tambah') }}">
                                 @csrf
 
+                                <!-- nik -->
+                                <div>
+                                    <x-input-label for="nik" :value="__('NIK')" />
+                                    <x-text-input id="nik" class="block mt-1 w-full" type="text" name="nik" :value="old('nik')" autofocus autocomplete="nik" />
+                                    <x-input-error :messages="$errors->get('nik')" class="mt-2" />
+                                </div> 
+
                                 <!-- nama -->
                                 <div>
                                     <x-input-label for="nama" :value="__('Nama')" />
@@ -26,97 +33,138 @@
                                     <x-input-error :messages="$errors->get('nama')" class="mt-2" />
                                 </div>
 
-                                <!-- tempat_lahir -->
+                                <!-- jk -->
                                 <div>
-                                    <x-input-label for="tempat_lahir" :value="__('Tempat Lahir')" />
-                                    <x-text-input id="tempat_lahir" class="block mt-1 w-full" type="text" name="tempat_lahir" :value="old('tempat_lahir')" required autofocus autocomplete="tempat_lahir" />
-                                    <x-input-error :messages="$errors->get('tempat_lahir')" class="mt-2" />
-                                </div>  
-                                
-                                <!-- tanggal_lahir -->
-                                <div>
-                                    <x-input-label for="tanggal_lahir" :value="__('Tanggal Lahir')" />
-                                    <x-text-input id="tanggal_lahir" class="block mt-1 w-full" type="date" name="tanggal_lahir" :value="old('tanggal_lahir')" required autofocus autocomplete="tanggal_lahir" />
-                                    <x-input-error :messages="$errors->get('tanggal_lahir')" class="mt-2" />
-                                </div>  
-
-
-                                <!-- nik -->
-                                <div>
-                                    <x-input-label for="nik" :value="__('NIK')" />
-                                    <x-text-input id="nik" class="block mt-1 w-full" type="text" name="nik" :value="old('nik')" autofocus autocomplete="nik" />
-                                    <x-input-error :messages="$errors->get('nik')" class="mt-2" />
-                                </div>                                  
-
-                                <!-- ayah -->
-                                <div>
-                                    <x-input-label for="ayah" :value="__('Nama Ayah')" />
-                                    <x-text-input id="ayah" class="block mt-1 w-full" type="text" name="ayah" :value="old('ayah')" autofocus autocomplete="ayah" />
-                                    <x-input-error :messages="$errors->get('ayah')" class="mt-2" />
-                                </div>                                   
-
-                                <!-- ibu -->
-                                <div>
-                                    <x-input-label for="ibu" :value="__('Nama Ibu')" />
-                                    <x-text-input id="ibu" class="block mt-1 w-full" type="text" name="ibu" :value="old('ibu')" autofocus autocomplete="ibu" />
-                                    <x-input-error :messages="$errors->get('ibu')" class="mt-2" />
-                                </div>                                 
-
-                                <!-- alamat -->
-                                <div>
-                                    <x-input-label for="alamat" :value="__('Alamat')" />
-                                    <textarea name="alamat" id="alamat" class="textarea textarea-bordered w-full" rows="3" placeholder="Alamat...."></textarea>
-                                </div>  
-                                
-
-                                <!-- anak_ke -->
-                                <div>
-                                    <x-input-label for="anak_ke" :value="__('Anak Ke')" />
-                                    <x-text-input id="anak_ke" class="block mt-1 w-full" type="number" name="anak_ke" :value="old('anak_ke')" autofocus autocomplete="anak_ke" value="1" min="1" />
-                                    <x-input-error :messages="$errors->get('anak_ke')" class="mt-2" />
-                                </div>     
-
-
-                                <!-- kelamin -->
-                                <div class="mt-4">
-                                    <x-input-label for="Kelamin" :value="__('Kelamin')" />
-
-                                    <select class="select select-bordered w-full max-w-xs" name="kelamin" id="kelamin">
-                                        <option value="L">Laki Laki</option>
-                                        <option value="P">Perempuan</option>
-                                    </select>
+                                    <x-input-label for="jk" :value="__('Jenis Kelamin')" />
+                                    <x-select-input id="jk" class="block mt-1 w-full" name="jk" :options="['L' => 'Laki-laki', 'P' => 'Perempuan', 'U' => 'Tidak Diketahui']" :selected="old('jk')" />
+                                    <x-input-error :messages="$errors->get('jk')" class="mt-2" />
                                 </div>
 
-                                <!-- golongan_darah -->
-                                <div class="mt-4">
-                                    <x-input-label for="golongan_darah" :value="__('Golongan Darah')" />
-
-                                    <select class="select select-bordered w-full max-w-xs" name="golongan_darah" id="golongan_darah">
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="AB">AB</option>
-                                        <option value="O">O</option>
-                                    </select>
-                                </div>            
-                                
-                                <!-- berat_lahir -->
+                                <!-- tgl_lahir -->
                                 <div>
-                                    <x-input-label for="berat_lahir" :value="__('Berat Lahir dalam Kg')" />
-                                    <x-text-input id="berat_lahir" class="block mt-1 w-full" type="number" name="berat_lahir" :value="old('berat_lahir')" autofocus autocomplete="berat_lahir" step="0.01" />
-                                    <x-input-error :messages="$errors->get('berat_lahir')" class="mt-2" />
-                                </div>    
+                                    <x-input-label for="tgl_lahir" :value="__('Tanggal Lahir')" />
+                                    <x-date-input id="tgl_lahir" class="block mt-1 w-full" name="tgl_lahir" :value="old('tgl_lahir')" required />
+                                    <x-input-error :messages="$errors->get('tgl_lahir')" class="mt-2" />
+                                </div>
 
-                                <!-- tinggi_lahir -->
+                                <!-- bb_lahir -->
                                 <div>
-                                    <x-input-label for="tinggi_lahir" :value="__('Tinggi Lahir dalam cm')" />
-                                    <x-text-input id="tinggi_lahir" class="block mt-1 w-full" type="number" name="tinggi_lahir" :value="old('tinggi_lahir')" autofocus autocomplete="tinggi_lahir" step="0.01" />
-                                    <x-input-error :messages="$errors->get('tinggi_lahir')" class="mt-2" />
-                                </div>                                   
+                                    <x-input-label for="bb_lahir" :value="__('Berat Badan Lahir')" />
+                                    <x-text-input id="bb_lahir" class="block mt-1 w-full" type="text" name="bb_lahir" :value="old('bb_lahir')" />
+                                    <x-input-error :messages="$errors->get('bb_lahir')" class="mt-2" />
+                                </div>
 
-                                <!-- berat_terakhir -->
+                                <!-- tb_lahir -->
+                                <div>
+                                    <x-input-label for="tb_lahir" :value="__('Tinggi Badan Lahir')" />
+                                    <x-text-input id="tb_lahir" class="block mt-1 w-full" type="text" name="tb_lahir" :value="old('tb_lahir')" />
+                                    <x-input-error :messages="$errors->get('tb_lahir')" class="mt-2" />
+                                </div>
 
-                                <!-- tinggi_terakhir -->
+                                <!-- nama_ortu -->
+                                <div>
+                                    <x-input-label for="nama_ortu" :value="__('Nama Orang Tua')" />
+                                    <x-text-input id="nama_ortu" class="block mt-1 w-full" type="text" name="nama_ortu" :value="old('nama_ortu')" />
+                                    <x-input-error :messages="$errors->get('nama_ortu')" class="mt-2" />
+                                </div>
 
+                                <!-- Provinsi -->
+                                <div>
+                                    <x-input-label for="prov" :value="__('Provinsi')" />
+                                    <x-text-input id="prov" class="block mt-1 w-full" type="text" name="prov" :value="old('prov')" />
+                                    <x-input-error :messages="$errors->get('prov')" class="mt-2" />
+                                </div>
+
+                                <!-- Kabupaten/Kota -->
+                                <div>
+                                    <x-input-label for="kab_kota" :value="__('Kabupaten/Kota')" />
+                                    <x-text-input id="kab_kota" class="block mt-1 w-full" type="text" name="kab_kota" :value="old('kab_kota')" />
+                                    <x-input-error :messages="$errors->get('kab_kota')" class="mt-2" />
+                                </div>
+
+                                <!-- Kecamatan -->
+                                <div>
+                                    <x-input-label for="kec" :value="__('Kecamatan')" />
+                                    <x-text-input id="kec" class="block mt-1 w-full" type="text" name="kec" :value="old('kec')" />
+                                    <x-input-error :messages="$errors->get('kec')" class="mt-2" />
+                                </div>
+
+                                <!-- Puskesmas -->
+                                <div>
+                                    <x-input-label for="pukesmas" :value="__('Puskesmas')" />
+                                    <x-text-input id="pukesmas" class="block mt-1 w-full" type="text" name="pukesmas" :value="old('pukesmas')" />
+                                    <x-input-error :messages="$errors->get('pukesmas')" class="mt-2" />
+                                </div>
+
+                                <!-- Desa/Kelurahan -->
+                                <div>
+                                    <x-input-label for="desa_kel" :value="__('Desa/Kelurahan')" />
+                                    <x-text-input id="desa_kel" class="block mt-1 w-full" type="text" name="desa_kel" :value="old('desa_kel')" />
+                                    <x-input-error :messages="$errors->get('desa_kel')" class="mt-2" />
+                                </div>
+
+                                <!-- Posyandu -->
+                                <div>
+                                    <x-input-label for="posyandu" :value="__('Posyandu')" />
+                                    <x-text-input id="posyandu" class="block mt-1 w-full" type="text" name="posyandu" :value="old('posyandu')" />
+                                    <x-input-error :messages="$errors->get('posyandu')" class="mt-2" />
+                                </div>
+
+                                <!-- RT -->
+                                <div>
+                                    <x-input-label for="rt" :value="__('RT')" />
+                                    <x-text-input id="rt" class="block mt-1 w-full" type="text" name="rt" :value="old('rt')" />
+                                    <x-input-error :messages="$errors->get('rt')" class="mt-2" />
+                                </div>
+
+                                <!-- RW -->
+                                <div>
+                                    <x-input-label for="rw" :value="__('RW')" />
+                                    <x-text-input id="rw" class="block mt-1 w-full" type="text" name="rw" :value="old('rw')" />
+                                    <x-input-error :messages="$errors->get('rw')" class="mt-2" />
+                                </div>
+
+                                <!-- Alamat -->
+                                <div>
+                                    <x-input-label for="alamat" :value="__('Alamat')" />
+                                    <x-text-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')" />
+                                    <x-input-error :messages="$errors->get('alamat')" class="mt-2" />
+                                </div>
+
+                                <!-- usia_saat_ukur -->
+                                <div>
+                                    <x-input-label for="usia_saat_ukur" :value="__('Usia Saat Ukur')" />
+                                    <x-text-input id="usia_saat_ukur" class="block mt-1 w-full" type="text" name="usia_saat_ukur" :value="old('usia_saat_ukur')" />
+                                    <x-input-error :messages="$errors->get('usia_saat_ukur')" class="mt-2" />
+                                </div>
+
+                                <!-- tanggal_pengukuran -->
+                                <div>
+                                    <x-input-label for="tanggal_pengukuran" :value="__('Tanggal Pengukuran')" />
+                                    <x-date-input id="tanggal_pengukuran" class="block mt-1 w-full" name="tanggal_pengukuran" :value="old('tanggal_pengukuran')" required />
+                                    <x-input-error :messages="$errors->get('tanggal_pengukuran')" class="mt-2" />
+                                </div>
+
+                                <!-- berat -->
+                                <div>
+                                    <x-input-label for="berat" :value="__('Berat')" />
+                                    <x-text-input id="berat" class="block mt-1 w-full" type="text" name="berat" :value="old('berat')" />
+                                    <x-input-error :messages="$errors->get('berat')" class="mt-2" />
+                                </div>
+
+                                <!-- tinggi -->
+                                <div>
+                                    <x-input-label for="tinggi" :value="__('Tinggi')" />
+                                    <x-text-input id="tinggi" class="block mt-1 w-full" type="text" name="tinggi" :value="old('tinggi')" />
+                                    <x-input-error :messages="$errors->get('tinggi')" class="mt-2" />
+                                </div>
+
+                                <!-- lila -->
+                                <div>
+                                    <x-input-label for="lila" :value="__('LILA')" />
+                                    <x-text-input id="lila" class="block mt-1 w-full" type="text" name="lila" :value="old('lila')" />
+                                    <x-input-error :messages="$errors->get('lila')" class="mt-2" />
+                                </div>
 
                                 <div class="flex items-center justify-end mt-4">
                                     <x-primary-button class="ms-4">
