@@ -138,6 +138,66 @@
                                     <th>Lila</th>
                                     <td>: {{$balita->lila}}</td>
                                 </tr>
+                                <!-- bb_u -->
+                                <tr>
+                                    <th>Bb_u</th>
+                                    <td>: {{$balita->bb_u}}</td>
+                                </tr>
+                                <!-- zs_bb_u -->
+                                <tr>
+                                    <th>Zs_bb_u</th>
+                                    <td>: {{$balita->zs_bb_u}}</td>
+                                </tr>
+                                <!-- tb_u -->
+                                <tr>
+                                    <th>Tb_u</th>
+                                    <td>: {{$balita->tb_u}}</td>
+                                </tr>
+
+                                <!-- zs_tb_u -->
+                                <tr>
+                                    <th>Zs_tb_u</th>
+                                    <td>: {{$balita->zs_tb_u}}</td>
+                                </tr>
+                                <!-- bb_tb -->
+                                <tr>
+                                    <th>Bb_tb</th>
+                                    <td>: {{$balita->bb_tb}}</td>
+                                </tr>
+                                <!-- zs_bb_tb -->
+                                <tr>
+                                    <th>Zs_bb_tb</th>
+                                    <td>: {{$balita->zs_bb_tb}}</td>
+                                </tr>
+                                <!-- naik_berat_badan -->
+                                <tr>
+                                    <th>Naik Berat Badan</th>
+                                    <td>: {{$balita->naik_berat_badan}}</td>
+                                </tr>
+                                <!-- pmt_diterima_kg -->
+                                <tr>
+                                    <th>Pmt_diterima_kg</th>
+                                    <td>: {{$balita->pmt_diterima_kg}}</td>
+                                </tr>
+                                <!-- jml_vit_a -->
+                                <tr>
+                                    <th>Jml_vit_a</th>
+                                    <td>: {{$balita->jml_vit_a}}</td>
+                                </tr>
+                                <!-- kpsp -->
+                                <tr>
+                                    <th>kpsp</th>
+                                    <td>: {{$balita->kpsp}}</td>
+                                </tr>
+                                <!-- kia -->
+                                <tr>
+                                    <th>kia</th>
+                                    <td>: {{$balita->kia}}</td>
+                                </tr>
+                                
+                                
+
+
 
                             </tbody>
                         </table>
