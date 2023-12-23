@@ -23,6 +23,11 @@
     <div class="sample-chart-container">
       <canvas id="line-chart"></canvas>
     </div>    
+
+    <div class="sample-chart-container">
+      <canvas id="kms-chart"></canvas>
+    </div> 
+
   </div>
 
 
@@ -35,6 +40,7 @@
       var cData = JSON.parse(`<?php echo $chart_data; ?>`);
       var ctx = $("#pie-chart");
       var ctx2 = $("#line-chart");
+      var ctx3 = $("#kms-chart");
 
       //pie chart data
       var data = {
@@ -132,9 +138,105 @@
                 }]
             },
             options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    position: "top",
+                    text: "sample",
+                    fontSize: 18,
+                    fontColor: "#111"
+                },                
                 legend: {display: false}
             }
         });
+
+
+
+
+        // Contoh data KMS
+        var dataKMS = {
+            labels: ['KMS1', 'KMS2', 'KMS3', 'KMS4', 'KMS5'],
+            datasets: [{
+                label: 'Grafik KMS',
+                data: [70, 80, 90, 85, 95], // Ganti dengan data KMS Anda
+                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna latar belakang batang
+                borderColor: 'rgba(75, 192, 192, 1)', // Warna garis batang
+                borderWidth: 1 // Lebar garis batang
+            }]
+        };
+
+        // Membuat grafik garis dengan tiga batas pertumbuhan
+        var batasNormal = [3.2, 3.8, 4.4, 5.0, 5.6, 6.2]; // Sesuaikan dengan berat normal bayi per bulan
+        var batasKurang = [2.8, 3.3, 3.8, 4.2, 4.7, 5.1]; // Sesuaikan dengan berat batas kurang bayi per bulan
+        var batasLebih = [3.6, 4.1, 4.7, 5.3, 5.9, 6.5]; // Sesuaikan dengan berat batas lebih bayi per bulan
+
+
+        var kmsChart = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: [], // Label bulan
+                datasets: [
+                    {
+                        label: 'Berat Badan',
+                        data: [], // Data berat badan bayi
+                        borderColor: 'blue', // Warna garis data berat badan
+                        fill: false
+                    },
+                    {
+                        label: 'Normal',
+                        data: batasNormal,
+                        borderColor: 'green',
+                        fill: false,
+                        borderDash: [5, 5] // Membuat garis putus-putus untuk batas pertumbuhan normal
+                    },
+                    {
+                        label: 'Gizi Kurang',
+                        data: batasKurang,
+                        borderColor: 'red',
+                        fill: false,
+                        borderDash: [5, 5] // Membuat garis putus-putus untuk batas pertumbuhan kurang
+                    },
+                    {
+                        label: 'Gizi Lebih',
+                        data: batasLebih,
+                        borderColor: 'orange',
+                        fill: false,
+                        borderDash: [5, 5] // Membuat garis putus-putus untuk batas pertumbuhan lebih
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Umur (bulan)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Berat Badan (kg)',
+                            beginAtZero: true
+                        }
+                    }
+                }
+            }
+        });
+
+        // Mengisi data KMS (contoh data, sesuaikan dengan kebutuhan Anda)
+        for (var bulan = 1; bulan <= 6; bulan++) {
+            kmsChart.data.labels.push(bulan);
+
+            // Gantilah logika di bawah ini dengan logika sesuai kebutuhan Anda
+            var berat = Math.random(5) + 3; // Data berat acak untuk contoh
+            kmsChart.data.datasets[0].data.push(berat);
+        }
+
+        // Update grafik
+        kmsChart.update();    
 
   });
 </script>
