@@ -4,8 +4,10 @@ namespace App\Exports;
 
 use App\Models\Balita;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class BalitaExport implements FromCollection
+
+class BalitaExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -13,5 +15,10 @@ class BalitaExport implements FromCollection
     public function collection()
     {
         return Balita::all();
+    }
+
+    public function headings(): array
+    {
+        return array_keys($this->collection()->first()->toArray());
     }
 }
