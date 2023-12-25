@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\Balita;
+use App\Models\balita;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\ToModel;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
@@ -16,7 +16,7 @@ class BalitaImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-        return new Balita([
+        return new balita([
             'nik' => $row['nik'],
             'nama' => $row['nama'],
             'jk' => $row['jk'],

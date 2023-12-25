@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\Balita;
+use App\Models\balita;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -14,7 +14,7 @@ class BalitaExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return Balita::all();
+        return balita::all();
     }
 
     public function headings(): array

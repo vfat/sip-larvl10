@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Balita;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Balita;
+use App\Models\balita;
 use Illuminate\View\View;
 
 class DetailBalitaController extends Controller
@@ -15,7 +15,7 @@ class DetailBalitaController extends Controller
     public function __invoke($id): View
     {
         return view('balita.detail',[
-            'balita' => Balita::find($id)
+            'balita' => balita::find($id)
         ]);
     }
 }

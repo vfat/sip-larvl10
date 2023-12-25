@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Balita;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Balita;
+use App\Models\balita;
 use Illuminate\View\View;
 
 class FormTambahBalitaController extends Controller

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Balita;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Balita;
+use App\Models\balita;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -34,7 +34,7 @@ class TambahBalitaController extends Controller
             "jml_vit_a", "kpsp", "kia"        
         
         */
-        Balita::create([
+        balita::create([
             'nik' => $request->nik,
             'nama' => $request->nama,
             'jk' => $request->jk,
