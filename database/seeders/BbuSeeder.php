@@ -15,7 +15,7 @@ class BbuSeeder extends Seeder
      */
     public function run(): void
     {
-        $data = [
+        $dataL = [
             [0, 2.1, 2.5, 2.9, 3.3, 3.9, 4.4, 5.0],
             [1, 2.9, 3.4, 3.9, 4.5, 5.1, 5.8, 6.6],
             [2, 3.8, 4.3, 4.9, 5.6, 6.3, 7.1, 8.0],
@@ -79,10 +79,10 @@ class BbuSeeder extends Seeder
             [60, 12.4, 14.1, 16.0, 18.3, 21.0, 24.2, 27.9],
         ];
         
-        $seededData = [];
+        $seededDataL = [];
         
-        foreach ($data as $row) {
-            $seededData[] = [
+        foreach ($dataL as $row) {
+            $seededDataL[] = [
                 'umur' => $row[0],
                 'min_3_sd' => $row[1],
                 'min_2_sd' => $row[2],
@@ -91,9 +91,10 @@ class BbuSeeder extends Seeder
                 'plus_1_sd' => $row[5],
                 'plus_2_sd' => $row[6],
                 'plus_3_sd' => $row[7],
+                'plus_3_sd' => 'L',
                 'created_at' => now(),
             ];
         }
-        DB::table('bbus')->insert($seededData);
+        DB::table('bbus')->insert($seededDataL);
     }
 }

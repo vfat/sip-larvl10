@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bbus', function (Blueprint $table) {
+        Schema::create('pbus', function (Blueprint $table) {
             $table->id();
             $table->string('umur')->nullable();
             $table->string('min_3_sd')->nullable();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bbus');
+        Schema::dropIfExists('pbus');
     }
 };
