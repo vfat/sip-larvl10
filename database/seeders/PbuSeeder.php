@@ -91,10 +91,10 @@ class PbuSeeder extends Seeder
                 'plus_1_sd' => $row[5],
                 'plus_2_sd' => $row[6],
                 'plus_3_sd' => $row[7],
-                'plus_3_sd' => 'L',
+                'jk' => 'L',
                 'created_at' => now(),
             ];
         }
-        DB::table('bbus')->insert($seededDataL);
+        DB::table('pbus')->insert($seededDataL);
     }
 }
