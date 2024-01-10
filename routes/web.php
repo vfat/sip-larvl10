@@ -13,6 +13,9 @@ use App\Http\Controllers\Balita\TambahBalitaController;
 use App\Http\Controllers\Balita\ImportBalitaController;
 use App\Http\Controllers\Balita\ExportBalitaController;
 use App\Http\Controllers\Balita\DetailBalitaController;
+use App\Http\Controllers\Mobile\DashboardMobileOrtuController;
+use App\Http\Controllers\Mobile\ProfileBalitaCOntroller;
+use App\Http\Controllers\Mobile\DetailBalitaController as Detbal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', homeController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', homeController::class)->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/mobile/ortu/{token}', DashboardMobileOrtuController::class)->name('mobile.ortu');
+Route::get('/mobile/balita/{token}', ProfileBalitaCOntroller::class)->name('mobile.balita');
+Route::get('/mobile/balita/detail/{id}/{token}', Detbal::class)->name('mobile.balitadetail');
 
 
 Route::middleware('auth')->group(function () {
