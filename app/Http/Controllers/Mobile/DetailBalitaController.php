@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\balita;
 use Illuminate\View\View;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class DetailBalitaController extends Controller
 {
@@ -14,9 +15,16 @@ class DetailBalitaController extends Controller
      */
     public function __invoke($id, $token): View
     {
+        $databalita = balita::find($id);
+        $qrcode = QrCode::generate(
+            $databalita->nik,
+        );
+
         return view('mobile.balitadetail',[
-            'balita' => balita::find($id),
-            'token' => $token
+            'balita' => $databalita,
+            'token' => $token,
+            'qrcode' => $qrcode
+
         ]);
     }
 }

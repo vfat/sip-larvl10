@@ -6,8 +6,8 @@
 
 <div class="grid grid-flow-row-dense grid-cols-2 gap-2">
   <div><a href="{{route('mobile.balita', $token)}}" class="btn btn-info btn-wide btn-xs sm:btn-sm md:btn-md lg:btn-lg">Profil Balita</a></div>
-  <div><a class="btn btn-success btn-wide btn-xs sm:btn-sm md:btn-md lg:btn-lg">Tumbuh Kembang</a></div>
-  <div><a class="btn btn-warning btn-success btn-wide btn-xs sm:btn-sm md:btn-md lg:btn-lg">QR Code</a></div>
+  <div><a href="{{route('mobile.balita', $token)}}" class="btn btn-success btn-wide btn-xs sm:btn-sm md:btn-md lg:btn-lg">Tumbuh Kembang</a></div>
+  <div><a href="{{route('mobile.balita', $token)}}" class="btn btn-warning btn-success btn-wide btn-xs sm:btn-sm md:btn-md lg:btn-lg">QR Code</a></div>
 </div>
 
 
