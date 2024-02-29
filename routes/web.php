@@ -19,6 +19,11 @@ use App\Http\Controllers\Mobile\DetailBalitaController as Detbal;
 use App\Http\Controllers\Mobile\QrBayiController;
 use App\Http\Controllers\Mobile\DashboardMobileKaderController;
 use App\Http\Controllers\Mobile\DashboardMobileBidanController;
+use App\Http\Controllers\Mobile\KaderProfileController;
+use App\Http\Controllers\Mobile\KaderDaftarHadirController;
+use App\Http\Controllers\Mobile\KaderPenjadwalanController;
+use App\Http\Controllers\Mobile\KaderCreateJadwalController;
+use App\Http\Controllers\Mobile\KaderDeleteJadwalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +47,11 @@ Route::get('/mobile/balita/detail/{id}/{token}', Detbal::class)->name('mobile.ba
 Route::get('/mobile/balita/qr/{id}/{token}', QrBayiController::class)->name('mobile.qrbalita');
 Route::get('/mobile/kader/{token}', DashboardMobileKaderController::class)->name('mobile.kader');
 Route::get('/mobile/bidan/{token}', DashboardMobileBidanController::class)->name('mobile.bidan');
+Route::get('/mobile/kader/profile/{token}', KaderProfileController::class)->name('mobile.kaderprofile');
+Route::get('/mobile/kader/daftarhadir/{token}', KaderDaftarHadirController::class)->name('mobile.kaderdaftarhadir');
+Route::get('/mobile/kader/penjadwalan/{token}', KaderPenjadwalanController::class)->name('mobile.kaderpenjadwalan');
+Route::post('/mobile/kader/penjadwalan/create/{token}', KaderCreateJadwalController::class)->name('mobile.kaderpenjadwalancreate');
+Route::get('/mobile/kader/penjadwalan/delete/{token}', KaderDeleteJadwalController::class)->name('mobile.kaderpenjadwalandelete');
 
 
 Route::middleware('auth')->group(function () {

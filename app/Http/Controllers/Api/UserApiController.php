@@ -9,6 +9,7 @@ use App\Http\Requests\UserRegisterRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Models\kehadiran;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -93,4 +94,21 @@ class UserApiController extends Controller
             "data" => true
         ])->setStatusCode(200);
     }
+
+    public function hadir(Request $request): JsonResponse
+    {
+        $request->validate([
+            'nik' => ['required', 'string', 'max:255'],
+        ]);
+
+        $hasil=kehadiran::updateOrCreate([
+            'nik' => $request->nik,
+ 
+        ]);
+
+        return response()->json([
+            "data" => true
+        ])->setStatusCode(200);
+    }
+
 }
