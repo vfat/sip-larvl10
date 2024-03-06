@@ -32,6 +32,7 @@
                                         <th></th>
                                         <th>Nama</th>
                                         <th>NIK</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +43,10 @@
                                         <th>{{$no}}</th>
                                         <td>{{$bayi->nama}}</td>
                                         <td>{{$bayi->nik}}</td>
+                                        <td>
+                                            <a href="{{route('mobile.kaderinput', [$bayi->id, $token])}}" class="btn btn-info">Input</a>
+
+                                        </td>
                                     </tr>
                                     @php($no++)
                                 @endforeach

@@ -25,6 +25,7 @@ class KaderDaftarHadirController extends Controller
 
         $tanggal = isset($_GET['tanggal']) ? $_GET['tanggal'] : date("Y-m-d");
         $balita = DB::table('balitas')
+            ->select('balitas.*')
             ->leftJoin('kehadirans', 'balitas.nik', '=', 'kehadirans.nik')
             ->whereDate('kehadirans.created_at', '=', $tanggal)
             ->paginate(15);

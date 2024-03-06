@@ -24,6 +24,8 @@ use App\Http\Controllers\Mobile\KaderDaftarHadirController;
 use App\Http\Controllers\Mobile\KaderPenjadwalanController;
 use App\Http\Controllers\Mobile\KaderCreateJadwalController;
 use App\Http\Controllers\Mobile\KaderDeleteJadwalController;
+use App\Http\Controllers\Mobile\KaderInputController;
+use App\Http\Controllers\Mobile\KaderInputCreateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +54,8 @@ Route::get('/mobile/kader/daftarhadir/{token}', KaderDaftarHadirController::clas
 Route::get('/mobile/kader/penjadwalan/{token}', KaderPenjadwalanController::class)->name('mobile.kaderpenjadwalan');
 Route::post('/mobile/kader/penjadwalan/create/{token}', KaderCreateJadwalController::class)->name('mobile.kaderpenjadwalancreate');
 Route::get('/mobile/kader/penjadwalan/delete/{token}', KaderDeleteJadwalController::class)->name('mobile.kaderpenjadwalandelete');
+Route::get('/mobile/kader/input/{id}/{token}', KaderInputController::class)->name('mobile.kaderinput');
+Route::post('/mobile/kader/input/create/{token}', KaderInputCreateController::class)->name('mobile.kaderinputcreate');
 
 
 Route::middleware('auth')->group(function () {
