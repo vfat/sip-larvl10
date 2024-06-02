@@ -29,13 +29,36 @@ class KaderInputCreateController extends Controller
             'tinggi' => ['required'],
         ]);
 
-        $hasil=kaderinput::updateOrCreate([
-            'balita_id' => $request->id,
+        $tanggal = isset($_GET['tanggal']) ? $_GET['tanggal'] : date("Y-m-d");
+
+        $cekinput = kaderinput::where('balita_id',$request->id)->whereDate('created_at', '=', $tanggal)->first();
+
+        $balita = balita::find($request->id);
+
+        $balita->update([
             'berat' => $request->berat,
             'tinggi' => $request->tinggi,
-            'vitamin' => $request->vitamin,
- 
         ]);
+
+        if($cekinput){
+            $kaderinput = kaderinput::find($cekinput->id);
+            $kaderinput->update([
+                'balita_id' => $request->id,
+                'berat' => $request->berat,
+                'tinggi' => $request->tinggi,
+                'vitamin' => $request->vitamin,
+            ]);
+        }else{
+            $hasil=kaderinput::updateOrCreate([
+                'balita_id' => $request->id,
+                'berat' => $request->berat,
+                'tinggi' => $request->tinggi,
+                'vitamin' => $request->vitamin,
+     
+            ]);
+        }
+
+
         // echo json_encode($hasil);
         
 

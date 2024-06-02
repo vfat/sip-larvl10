@@ -22,13 +22,18 @@ class TambahPenggunaController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);        
-        User::create([
+        ]);
+                
+        $hasil= User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
+
+        if($request->nikbalita){
+
+        }
 
         return redirect()->back();
     }

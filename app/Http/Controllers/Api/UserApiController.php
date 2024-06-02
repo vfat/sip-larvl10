@@ -101,6 +101,8 @@ class UserApiController extends Controller
             'nik' => ['required', 'string', 'max:255'],
         ]);
 
+        $res = kehadiran::where('nik',$request->nik)->delete();
+
         $hasil=kehadiran::updateOrCreate([
             'nik' => $request->nik,
  
