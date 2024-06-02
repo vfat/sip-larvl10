@@ -16,6 +16,7 @@ use App\Http\Controllers\Balita\DetailBalitaController;
 use App\Http\Controllers\Mobile\DashboardMobileOrtuController;
 use App\Http\Controllers\Mobile\ProfileBalitaCOntroller;
 use App\Http\Controllers\Mobile\DetailBalitaController as Detbal;
+use App\Http\Controllers\Mobile\GrafikKmsController;
 use App\Http\Controllers\Mobile\QrBayiController;
 use App\Http\Controllers\Mobile\DashboardMobileKaderController;
 use App\Http\Controllers\Mobile\DashboardMobileBidanController;
@@ -43,9 +44,10 @@ Route::get('/', homeController::class)->middleware(['auth', 'verified'])->name('
 
 Route::get('/dashboard', homeController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/mobile/ortu/{token}', DashboardMobileOrtuController::class)->name('mobile.ortu');
+Route::get('/mobile/ortu/{token}', ProfileBalitaCOntroller::class)->name('mobile.ortu');
 Route::get('/mobile/balita/{token}', ProfileBalitaCOntroller::class)->name('mobile.balita');
 Route::get('/mobile/balita/detail/{id}/{token}', Detbal::class)->name('mobile.balitadetail');
+Route::get('/mobile/balita/kms/{id}/{token}', GrafikKmsController::class)->name('mobile.kmsbalita');
 Route::get('/mobile/balita/qr/{id}/{token}', QrBayiController::class)->name('mobile.qrbalita');
 Route::get('/mobile/kader/{token}', DashboardMobileKaderController::class)->name('mobile.kader');
 Route::get('/mobile/bidan/{token}', DashboardMobileBidanController::class)->name('mobile.bidan');
