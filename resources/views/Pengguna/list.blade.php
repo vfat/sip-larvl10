@@ -61,7 +61,7 @@
                                 <div class="mt-4">
                                     <x-input-label for="Role" :value="__('Role')" />
 
-                                    <select class="select select-bordered w-full max-w-xs" name="role" id="role">
+                                    <select class="select select-bordered w-full max-w-xs" name="role" id="role" onchange="connectBalita()">
                                         <option value="admin">Admin</option>
                                         <option value="bidan">Bidan</option>
                                         <option value="kader">Kader</option>
@@ -69,6 +69,13 @@
                                         <option value="orangtua">Orang Tua</option>
                                     </select>
                                 </div>
+
+                                <!-- Bayi -->
+                                <div>
+                                    <x-input-label for="bayi" :value="__('NIK balita')" id="nikbalita" />
+                                    <x-text-input id="bayi" class="block mt-1 w-full" type="text" name="bayi" :value="old('bayi')" required autofocus autocomplete="bayi" />
+                                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                                </div>                                
 
 
                                 <div class="flex items-center justify-end mt-4">
@@ -132,3 +139,22 @@
         </div>
     </div>
 </x-app-layout>
+
+<<script>
+document.getElementById("bayi").style.visibility = "hidden";
+document.getElementById("nikbalita").style.visibility = "hidden";
+
+async function connectBalita(){
+    var x = document.getElementById("role").value;
+    
+    if(x == "orangtua"){
+        document.getElementById("bayi").style.visibility = "visible";
+        document.getElementById("nikbalita").style.visibility = "visible";
+
+    }
+    else{
+        document.getElementById("bayi").style.visibility = "hidden";
+        document.getElementById("nikbalita").style.visibility = "hidden";
+    }
+}
+</script>

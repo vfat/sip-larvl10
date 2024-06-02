@@ -62,12 +62,12 @@
                                 </tr>                                 
                                 <!-- berat_lahir -->
                                 <tr>
-                                    <th>Berat Lahir</th>
+                                    <th>BB Lahir</th>
                                     <td>: {{$balita->bb_lahir}}</td>
                                 </tr>       
                                 <!-- tinggi_lahir -->
                                 <tr>
-                                    <th>Tinggi Lahir</th>
+                                    <th>PB Lahir</th>
                                     <td>: {{$balita->tb_lahir}}</td>
                                 <tr>
                                 <!-- nama_ortu -->
@@ -224,27 +224,27 @@
 
 
         
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <!-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="overflow-x-auto">
-                        <h2>Analisa</h2>
-                        @php($status_gizi="Baik")
-                        <table class="table table-zebra">
-                            <tbody>
+                        <h2>Analisa</h2> -->
+                        <!-- @php($status_gizi="Baik") -->
+                        <!-- <table class="table table-zebra">
+                            <tbody> -->
                                 <!-- status_gizi -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Gizi</th>
                                     <td>: {{$status_gizi}}</td>
 
-                                </tr>
+                                </tr> -->
                                 <!-- status_berat -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Berat</th>
                                     <td>: {{$status_gizi}}</td>
 
-                                </tr>  
+                                </tr>   -->
                                 <!-- status_tinggi -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Tinggi</th>
                                     <td>: {{$status_gizi}}</td>
 
@@ -254,7 +254,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
         </div>

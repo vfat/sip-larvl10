@@ -31,8 +31,8 @@
                             </div> 
                             <!-- berat -->
                             <div class="mt-4">
-                                <x-input-label for="nik" :value="__('Berat')" />
-                                <x-text-input id="berat" class="block mt-1 w-full" name="berat" :value="old('berat')"   type="number" step="0.01" />
+                                <x-input-label for="berat" :value="__('Berat')" />
+                                <x-text-input id="berat" class="block mt-1 w-full" name="berat" value="{{$kaderinput->berat??0}}"   type="number" step="0.01" />
                             </div> 
 
                             <div class="flex items-center justify-start mt-4">
@@ -43,7 +43,7 @@
                             <!-- tinggi -->
                             <div class="mt-4">
                                 <x-input-label for="tinggi" :value="__('Tinggi')" />
-                                <x-text-input id="tinggi" class="block mt-1 w-full" name="tinggi" :value="old('tinggi')"   type="number" step="0.01" />
+                                <x-text-input id="tinggi" class="block mt-1 w-full" name="tinggi" value="{{$kaderinput->tinggi??0}}"   type="number" step="0.01" />
                             </div>   
                             <div class="flex items-center justify-start mt-4">
                                     <x-primary-button class="ms-4">
@@ -53,11 +53,11 @@
 
                             <!-- vitamin -->
                             <div class="mt-4">
-                                <x-input-label for="vitamin" :value="__('Pemberian Vitamin')" />
+                                <x-input-label for="vitamin" :value="__('Vitamin')" />
 
-                                <select class="block mt-1 w-full" name="vitamin" id="vitamin">
-                                    <option value="ya">YA</option>
-                                    <option value="tidak">TIDAK</option>
+                                <select class="block mt-1 w-full" name="vitamin" id="vitamin" >
+                                    <option value="ya"  {{ $kaderinput ? ($kaderinput->vitamin == "ya" ? "selected" : ""):"" }}>YA</option>
+                                    <option value="tidak"  {{ $kaderinput ? ($kaderinput->vitamin == "tidak" ? "selected" : ""):"" }}>TIDAK</option>
                                 </select>
                             </div>                                                       
 

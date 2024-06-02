@@ -44,8 +44,9 @@
                                         <td>{{$bayi->nama}}</td>
                                         <td>{{$bayi->nik}}</td>
                                         <td>
+                                            @if ($tanggal == date("Y-m-d"))
                                             <a href="{{route('mobile.kaderinput', [$bayi->id, $token])}}" class="btn btn-info">Input</a>
-
+                                            @endif
                                         </td>
                                     </tr>
                                     @php($no++)

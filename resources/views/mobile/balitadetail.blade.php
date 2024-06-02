@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ 
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
 <x-mobile-layout>
 
 <div class="py-12">
@@ -48,12 +53,12 @@
                                 </tr>                                 
                                 <!-- berat_lahir -->
                                 <tr>
-                                    <th>Berat Lahir</th>
+                                    <th>BB Lahir</th>
                                     <td>: {{$balita->bb_lahir}}</td>
                                 </tr>       
                                 <!-- tinggi_lahir -->
                                 <tr>
-                                    <th>Tinggi Lahir</th>
+                                    <th>PB Lahir</th>
                                     <td>: {{$balita->tb_lahir}}</td>
                                 <tr>
                                 <!-- nama_ortu -->
@@ -188,10 +193,10 @@
                                     <td>: {{$balita->kia}}</td>
                                 </tr>
                                 
-                                <tr>
+                                <!-- <tr>
                                     <th>QR</th>
                                     <td>: {{$qrcode}}</td>
-                                </tr>                                
+                                </tr>                                 -->
 
 
 
@@ -213,27 +218,27 @@
 
 
         
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <!-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="overflow-x-auto">
                         <h2>Analisa</h2>
                         @php($status_gizi="Baik")
                         <table class="table table-zebra">
-                            <tbody>
+                            <tbody> -->
                                 <!-- status_gizi -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Gizi</th>
                                     <td>: {{$status_gizi}}</td>
 
-                                </tr>
+                                </tr> -->
                                 <!-- status_berat -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Berat</th>
                                     <td>: {{$status_gizi}}</td>
 
-                                </tr>  
+                                </tr>   -->
                                 <!-- status_tinggi -->
-                                <tr>
+                                <!-- <tr>
                                     <th>Status Tinggi</th>
                                     <td>: {{$status_gizi}}</td>
 
@@ -243,14 +248,14 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
         </div>
     </div>   
 
 
-    <div class="py-12">
+    <!-- <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
 
@@ -376,6 +381,6 @@
 
 
         </div>
-    </div>
+    </div> -->
 
 </x-mobile-layout>

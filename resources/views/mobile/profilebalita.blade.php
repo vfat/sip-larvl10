@@ -2,7 +2,7 @@
 
 <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div><a href="{{route('mobile.ortu', $token)}}" class="btn btn-primary btn-xs sm:btn-sm md:btn-sm lg:btn-sm">Kembali</a></div>
+
         
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -27,6 +27,7 @@
                                     <td>
                                         <a href="{{route('mobile.balitadetail', [$bayi->id, $token])}}" class="btn btn-info">Detail</a>
                                         <a href="{{route('mobile.qrbalita', [$bayi->id, $token])}}" class="btn btn-info">QR</a>
+                                        <a href="{{route('mobile.kmsbalita', [$bayi->id, $token])}}" class="btn btn-info">Grafik</a>
                                     </td>
                                 </tr>
                                 @php($no++)
