@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('token')->nullable();
             $table->enum('role', ['admin', 'bidan', 'kader', 'ahligizi', 'orangtua'])->nullable()->default('kader');
+            $table->enum('lokasi', ['BEBEKAN', 'SUMBERDIREN'])->nullable()->default('BEBEKAN');
             $table->rememberToken();
             $table->timestamps();
         });

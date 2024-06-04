@@ -13,6 +13,9 @@ use App\Http\Controllers\Balita\TambahBalitaController;
 use App\Http\Controllers\Balita\ImportBalitaController;
 use App\Http\Controllers\Balita\ExportBalitaController;
 use App\Http\Controllers\Balita\DetailBalitaController;
+use App\Http\Controllers\Balita\FormEditBalitaController;
+use App\Http\Controllers\Balita\EditBalitaController;
+use App\Http\Controllers\Balita\DeleteBalitaController;
 use App\Http\Controllers\Mobile\DashboardMobileOrtuController;
 use App\Http\Controllers\Mobile\ProfileBalitaCOntroller;
 use App\Http\Controllers\Mobile\DetailBalitaController as Detbal;
@@ -77,6 +80,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/balita/import', ImportBalitaController::class)->name('balita.import');
     Route::get('/balita/export', ExportBalitaController::class)->name('balita.export');
     Route::get('/balita/detail/{id}', DetailBalitaController::class)->name('balita.detail');
+    Route::get('/balita/edit/{id}', FormEditBalitaController::class)->name('balita.editform');
+    Route::post('/balita/edit', EditBalitaController::class)->name('balita.edit');
+    Route::get('/balita/delete/{id}', DeleteBalitaController::class)->name('balita.delete');
 });
 
 require __DIR__.'/auth.php';

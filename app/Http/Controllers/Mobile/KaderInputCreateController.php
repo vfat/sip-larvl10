@@ -47,6 +47,7 @@ class KaderInputCreateController extends Controller
                 'berat' => $request->berat,
                 'tinggi' => $request->tinggi,
                 'vitamin' => $request->vitamin,
+                'lila' => $request->lila,
             ]);
         }else{
             $hasil=kaderinput::updateOrCreate([
@@ -54,6 +55,7 @@ class KaderInputCreateController extends Controller
                 'berat' => $request->berat,
                 'tinggi' => $request->tinggi,
                 'vitamin' => $request->vitamin,
+                'lila' => $request->lila,
      
             ]);
         }

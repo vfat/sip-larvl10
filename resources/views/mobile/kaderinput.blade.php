@@ -51,6 +51,17 @@
                                     </x-primary-button>
                             </div>
 
+                            <!-- lila -->
+                            <div class="mt-4">
+                                <x-input-label for="lila" :value="__('Lila')" />
+                                <x-text-input id="lila" class="block mt-1 w-full" name="lila" value="{{$kaderinput->lila??0}}"   type="number" step="0.01" />
+                            </div>   
+                            <div class="flex items-center justify-start mt-4">
+                                    <x-primary-button class="ms-4">
+                                        {{ __('Input') }}
+                                    </x-primary-button>
+                            </div>
+
                             <!-- vitamin -->
                             <div class="mt-4">
                                 <x-input-label for="vitamin" :value="__('Vitamin')" />

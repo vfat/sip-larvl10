@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('balita_id')->constrained();
             $table->string('berat')->nullable(); 
             $table->string('tinggi')->nullable(); 
+            $table->string('lila')->nullable(); 
             $table->enum('vitamin', ['ya', 'tidak'])->nullable()->default('tidak');
             $table->timestamps();
         });

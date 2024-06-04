@@ -29,6 +29,7 @@ class TambahPenggunaController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
+            'lokasi' => $request->lokasi,
         ]);
 
         if($request->nikbalita){

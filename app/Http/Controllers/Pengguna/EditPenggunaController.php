@@ -32,6 +32,7 @@ class EditPenggunaController extends Controller
                 'email'=> $request->email,
                 'password'=> $request->password_baru,
                 'role'=> $request->role,
+                'lokasi' => $request->lokasi,
             ]);
 
         }
@@ -45,6 +46,7 @@ class EditPenggunaController extends Controller
                 'name'=> $request->name,
                 'email'=> $request->email,
                 'role'=> $request->role,
+                'lokasi' => $request->lokasi,
             ]);
         }
 

@@ -70,6 +70,15 @@
                                     </select>
                                 </div>
 
+                                <div class="mt-4">
+                                    <x-input-label for="Lokasi" :value="__('Lokasi')" />
+
+                                    <select class="select select-bordered w-full max-w-xs" name="lokasi" id="lokasi">
+                                        <option value="BEBEKAN">BEBEKAN</option>
+                                        <option value="SUMBERDIREN">SUMBERDIREN</option>
+                                    </select>
+                                </div>      
+
                                 <!-- Bayi -->
                                 <div>
                                     <x-input-label for="bayi" :value="__('NIK balita')" id="nikbalita" />
@@ -104,6 +113,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Role</th>
+                                    <th>Lokasi</th>
                                     <th>Create At</th>
                                     <th></th>
                                 </tr>
@@ -117,6 +127,7 @@
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->role}}</td>
+                                    <td>{{$user->lokasi}}</td>
                                     <td>{{$user->created_at->diffForHumans()}}</td>
                                     <td>
                                         <a href="{{route('pengguna.editform',$user->id)}}" class="link link-hover text-blue-300">Edit</a>

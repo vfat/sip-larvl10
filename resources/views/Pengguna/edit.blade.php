@@ -73,6 +73,15 @@
                                     </select>
                                 </div>
 
+                                <div class="mt-4">
+                                    <x-input-label for="Lokasi" :value="__('Lokasi')" />
+
+                                    <select class="select select-bordered w-full max-w-xs" name="lokasi" id="lokasi" value="{{$pengguna->lokasi}}">
+                                        <option value="BEBEKAN">BEBEKAN</option>
+                                        <option value="SUMBERDIREN">SUMBERDIREN</option>
+                                    </select>
+                                </div>     
+
 
                                 <div class="flex items-center justify-end mt-4">
                                     <x-primary-button class="ms-4">

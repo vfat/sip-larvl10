@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
-class TambahBalitaController extends Controller
+class EditBalitaController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -34,8 +34,10 @@ class TambahBalitaController extends Controller
             "jml_vit_a", "kpsp", "kia"        
         
         */
-        try {
-            balita::create([
+
+        $balita = balita::find($request->id);
+
+        $balita->update([
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'jk' => $request->jk,
@@ -71,9 +73,6 @@ class TambahBalitaController extends Controller
             ]);
     
             return redirect()->back();
-        } catch (\Throwable $th) {
-            echo 'Error: '.$th->getMessage;
-        }
 
 
     }

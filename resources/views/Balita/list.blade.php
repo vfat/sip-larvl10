@@ -42,7 +42,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @php($no=1)
+                            @php($page=request()->get('page') ? ((request()->get('page'))-1)*15 : 0)
+                            @php($no=1+$page)
                             @foreach ($balita as $bayi)
                             
                                 <tr>
@@ -52,8 +53,8 @@
                                     <td>{{$bayi->tgl_lahir}}</td>
                                     <td>
                                         <a href="{{route('balita.detail', $bayi->id)}}" class="link link-hover text-green-300">Informasi</a>
-                                        <a href="#" class="link link-hover text-blue-300">Edit</a>
-                                        <a href="#" class="link link-hover text-red-300">Delete</a>
+                                        <a href="{{route('balita.editform', $bayi->id)}}" class="link link-hover text-blue-300">Edit</a>
+                                        <a href="{{route('balita.delete', $bayi->id)}}" class="link link-hover text-red-300">Delete</a>
                                     </td>
                                 </tr>
                                 @php($no++)
